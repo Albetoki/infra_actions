@@ -34,10 +34,12 @@ jobs:
 
 # .github/workflows/main.yml
 
-# Тут ваши задачи тестирования и сборки образа
-# ...
-# Сразу после них добавьте новую задачу: деплой приложения
-build_and_push_to_docker_hub:
+  # Собрать и отправить образ приложения на DockerHub
+  build:
+    runs-on: ubuntu-latest
+    needs: tests # Не выполнять сразу, ждать, пока выполнится tests
+    steps:
+    - build_and_push_to_docker_hub:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     needs: tests
@@ -60,3 +62,7 @@ build_and_push_to_docker_hub:
         with:
           push: true
           tags: ваш-логин-на-docker-hub/ваш-репозиторий-на-docker-hub:latest
+
+# Тут ваши задачи тестирования и сборки образа
+# ...
+# Сразу после них добавьте новую задачу: деплой приложения
