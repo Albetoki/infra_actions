@@ -49,7 +49,7 @@ jobs:
         uses: docker/build-push-action@v2 
         with:
           push: true
-          tags: ваш-логин-на-docker-hub/ваш-репозиторий-на-docker-hub:latest
+          tags: albetoki/sprint_16:v1
 
 # Тут ваши задачи тестирования и сборки образа
 # ...
