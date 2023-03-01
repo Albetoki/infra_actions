@@ -49,7 +49,7 @@ jobs:
         uses: docker/build-push-action@v2 
         with:
           push: true
-          tags: albetoki/sprint_16:v1
+          tags: albetoki/sprint_16:latest
 
 # Тут ваши задачи установка на боевой сервер - version2
   Deploy:
