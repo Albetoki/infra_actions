@@ -64,9 +64,9 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }} # Если ваш ssh-ключ защищён фразой-паролем
         script: |
-          sudo docker pull albetoki/sprint_16:v1
+          sudo docker pull albetoki/sprint_16:lastest
           sudo docker stop $(sudo docker ps -a -q)
-          sudo docker run --rm -d -p 5000:5000 albetoki/sprint_16:v1
+          sudo docker run --rm -d -p 5000:5000 albetoki/sprint_16:latest
 
   Send_message:
     runs-on: ubuntu-latest
